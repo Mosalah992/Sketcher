@@ -1,0 +1,9 @@
+node_modules/
+bin/
+dist/
+.tmp/
+.storage/
+neutralinojs.log
+resources/js/neutralino.js
+resources/js/neutralino.d.ts
+*.WebView2/

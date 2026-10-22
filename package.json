@@ -1,0 +1,20 @@
+{
+  "name": "sepia-sketcher",
+  "version": "1.0.0",
+  "description": "Turns pictures into sepia pencil sketches on aged paper, as on the Bruma Joint Archives wanted posters.",
+  "scripts": {
+    "setup": "neu update",
+    "dev": "neu run",
+    "icons": "node scripts/make-icons.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@neutralinojs/neu": "^11.8.0",
+    "png-to-ico": "^2.1.8",
+    "rcedit": "^4.0.1",
+    "sharp": "^0.34.4"
+  },
+  "private": true
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="age" cx="50%" cy="40%" r="70%">
+      <stop offset="0.55" stop-color="#e9dcbc"/>
+      <stop offset="1" stop-color="#cdb98c"/>
+    </radialGradient>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="30" fill="url(#age)"/>
+</svg>

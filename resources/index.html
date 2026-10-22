@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sepia Sketcher</title>
+    <link rel="icon" href="icons/appIcon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <h1>Sepia Sketcher</h1>
+      <p>Any picture, drawn as a sepia pencil sketch on aged paper.</p>
+    </header>
+
+    <main>
+      <form class="options" id="options" aria-label="Sketch options">
+        <fieldset>
+          <legend>Frame</legend>
+          <div class="seg">
+            <label><input type="radio" name="frame" value="poster" checked /><span>Wanted poster</span></label>
+            <label><input type="radio" name="frame" value="whole" /><span>Whole picture</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Size</legend>
+          <div class="seg">
+            <label title="450 × 495, as on the archive"><input type="radio" name="scale" value="1" checked /><span>Standard</span></label>
+            <label title="Twice the size"><input type="radio" name="scale" value="2" /><span>Large</span></label>
+            <label title="Three times the size"><input type="radio" name="scale" value="3" /><span>Huge</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Save as</legend>
+          <div class="seg">
+            <label><input type="radio" name="format" value="png" checked /><span>PNG</span></label>
+            <label><input type="radio" name="format" value="jpeg" /><span>JPEG</span></label>
+            <label><input type="radio" name="format" value="webp" /><span>WebP</span></label>
+          </div>
+        </fieldset>
+      </form>
+
+      <label class="drop" id="drop">
+        <input type="file" id="pick" accept="image/*" multiple aria-label="Choose pictures" />
+        <span class="drop__lead">Drop pictures here</span>
+        <span class="drop__or">or</span>
+        <span class="btn btn--ink">Choose pictures</span>
+        <span class="drop__note">You can also paste a picture with Ctrl+V. Nothing leaves this computer.</span>
+      </label>
+
+      <div class="bar" id="bar" hidden>
+        <span id="count"></span>
+        <span class="bar__spacer"></span>
+        <button type="button" class="btn" id="clear">Clear</button>
+        <button type="button" class="btn btn--ink" id="saveAll">Save all…</button>
+      </div>
+
+      <ul class="sheets" id="sheets"></ul>
+    </main>
+
+    <dialog class="viewer" id="viewer">
+      <div class="viewer__stage">
+        <canvas id="viewerSketch"></canvas>
+        <img id="viewerOriginal" alt="The original picture" hidden />
+      </div>
+      <div class="viewer__bar">
+        <span class="viewer__name" id="viewerName"></span>
+        <button type="button" class="btn" id="viewerToggle" aria-pressed="false">Show original</button>
+        <button type="button" class="btn btn--ink" id="viewerSave">Save…</button>
+        <button type="button" class="btn" id="viewerClose">Close</button>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="js/neutralino.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
